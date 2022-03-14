@@ -6,12 +6,14 @@ import Navigation from "./Shared/Navigation/Navigation";
 import GetForm from './pages/GetForm/GetForm';
 import UpdateForm from './pages/UpdateForm/UpdateForm';
 
+
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <BrowserRouter>
         <Navigation />
         <Routes>
+         
           <Route path="/table" element={<Table />} />
           <Route path="/getForm" element={<GetForm />} />
           <Route path="/updateForm" element={<UpdateForm />} />
