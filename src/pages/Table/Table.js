@@ -47,7 +47,7 @@ function dragover(e){
           {!tableHeaders?.created_at?.hidden ? <th>{tableHeaders?.created_at?.title}</th>:""}
           </tr>
           {
-            tableDatas.map((td,id)=><tr draggable='true' ondragstart={start} ondragover={dragover} key={id}>
+            tableDatas.map((td,id)=><tr draggable='true' onDragStart={start} onDragOver={dragover} key={id}>
               {!tableHeaders?.id?.hidden?<td>{td?.id}</td>:""}
               {!tableHeaders?.name?.hidden?<td>{td?.name}</td>:""}
               {!tableHeaders?.message?.hidden?<td>{td?.message}</td>:""}

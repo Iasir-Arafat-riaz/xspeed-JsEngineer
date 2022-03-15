@@ -1,34 +1,50 @@
 import React from "react";
+import { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import "./GetForm.css"
 
 const GetForm = () => {
     const submitForm=(e)=>{
         e.preventDefault()
-console.log("hlw riaz");
+console.log(formRef.current.value);
+
     }
+
+    const { register, handleSubmit,reset,watch } = useForm();
+  const onSubmit = data => {
+      console.log(data)
+    };
+
+    const formRef = useRef()
   return (
     <div className="tableForm">
-      <h1>Get form</h1>
+     <div>
+     <h1 className="formText">Get form</h1>
       <br />
-      <Form onSubmit={submitForm}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-          
-        </Form.Group>
+      <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("firstName")} />
+      <input {...register(`email`)} />
+      <textarea name="" id="" cols="30" rows="3"></textarea>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-       
-        
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+      <select {...register("gender")}>
+        <option value="female">female</option>
+        <option value="male">male</option>
+        <option value="other">other</option>
+      </select>
+      {/* <input  /> */}
+      <div class=" text-center ">
+      <Button  class="btn btn-info"  type="submit"> Submit</Button>
+        </div>
+     
+    </form>
+     </div>
+
+      
     </div>
   );
 };
+
+
 
 export default GetForm;
