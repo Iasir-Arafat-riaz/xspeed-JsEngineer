@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import "./Table.css";
+import { List, arrayMove } from "react-movable";
 
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -86,6 +87,7 @@ const handleUpdate =(id)=>{
 console.log(tableDatas,renderDatas)
   return (
     <div className="tableList">
+     
       <h1 className="text-center">This is Xpeed TableList</h1>
       
       <table>
@@ -98,7 +100,7 @@ console.log(tableDatas,renderDatas)
           {!tableHeaders?.created_at?.hidden ? <th>{tableHeaders?.created_at?.title}</th>:""}
           </tr>
           {
-            renderDatas.map((td,id)=><tr  key={id}>
+            renderDatas.map((td,id)=><tr   key={id}>
               {!tableHeaders?.id?.hidden?<td onClick={()=>handleUpdate(td?.id)}>{td?.id}</td>:""}
               {!tableHeaders?.name?.hidden?<td>{td?.name}</td>:""}
               {!tableHeaders?.message?.hidden?<td>{td?.message}</td>:""}
