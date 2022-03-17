@@ -85,6 +85,15 @@ const handleUpdate =(id)=>{
 }
 
 console.log(tableDatas,renderDatas)
+
+
+//Reorder
+const handleReorder=()=>{
+  console.log("reorderComplete");
+  
+   }
+        
+
   return (
     <div className="tableList">
      
@@ -109,6 +118,45 @@ console.log(tableDatas,renderDatas)
           }
        
       </table>
+
+<h2 className="text-center">For Reorder</h2>
+
+      <List
+      onClick={handleReorder}
+      values={renderDatas}
+      onChange={({ oldIndex, newIndex }) =>
+      setRenderDatas(arrayMove(renderDatas, oldIndex, newIndex))
+      }
+      renderList={({ children, props }) => <table {...props}>
+
+<tr>
+          {!tableHeaders?.id?.hidden ?<th>{tableHeaders?.id?.title} 
+</th>:""}
+          {!tableHeaders?.name?.hidden ?<th > {tableHeaders?.name?.title} </th>:""}
+          {!tableHeaders?.message?.hidden ?<th>{tableHeaders?.message?.title}</th>:""}
+          {!tableHeaders?.created_at?.hidden ? <th>{tableHeaders?.created_at?.title}</th>:""}
+          </tr>
+
+{children}
+
+{
+ 
+}
+      </table>}
+      renderItem={({ value, props }) => {
+        console.log(value); 
+
+        return <tr {...props}   >
+        {!tableHeaders?.id?.hidden?<td >{value?.id}</td>:""}
+        {!tableHeaders?.name?.hidden?<td>{value?.name}</td>:""}
+        {!tableHeaders?.message?.hidden?<td>{value?.message}</td>:""}
+        {!tableHeaders?.created_at?.hidden?<td>{value?.created_at}</td>:""}
+      </tr>
+      }}
+    />
+
+
+
     </div>
   );
 };
