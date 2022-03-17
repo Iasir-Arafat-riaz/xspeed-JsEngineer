@@ -17,7 +17,7 @@ function App() {
           <Route path="/" element={<Table />} />
           <Route path="/table" element={<Table />} />
           <Route path="/getForm" element={<GetForm />} />
-          <Route path="/updateForm" element={<UpdateForm />} />
+          <Route path="/updateForm/:id" element={<UpdateForm />} />
         </Routes>
       </BrowserRouter>
     </div>

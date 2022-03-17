@@ -1,15 +1,8 @@
-.tableForm input,
-select,textarea {
-  display: block;
-  margin: 20px;
-  width: 50%;
-  padding: 5px;
+
+
+.getForm {
+  
   margin-left: auto;
   margin-right: auto;
-  border-radius: 5px;
-  background-color: rgb(245, 238, 223);
-}
-
-.formText {
-  text-align: center;
+  margin: 50px 200px;
 }

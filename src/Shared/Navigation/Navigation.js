@@ -16,7 +16,7 @@ const Navigation = () => {
           <Nav className="me-auto">
             <NavLink className="navLink" to="/table"><b>Table</b></NavLink>
             <NavLink className="navLink" to="/getForm"><b>GetForm</b></NavLink>
-            <NavLink className="navLink" to="/updateForm"><b>UpdateForm</b></NavLink>
+            {/* <NavLink className="navLink" to="/updateForm/:id"><b>UpdateForm</b></NavLink> */}
           </Nav>
         </Container>
       </Navbar>
